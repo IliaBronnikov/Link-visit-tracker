@@ -3,7 +3,7 @@
 
 ### Приложение предоставляет два HTTP ресурса.
 - Ресурс загрузки посещений:
-  - #### Запрос
+  - Запрос
   ```
   POST /visited_links
   {
@@ -13,19 +13,19 @@
   ]
   }
   ```
-  - #### Ответ
+  - Ответ
   ```
   {
   "status": "ok"
   }
-```
+  ```
 
 - Ресурс получения статистики:
-    - #### Запрос
+    - Запрос
   ```
   GET /visited_domains?start=1545221231&end=1545217638
   ```
-  - #### Ответ
+  - Ответ
   ```
   {
   "domains": [
@@ -36,7 +36,7 @@
   }
   ```
   
-### Приложение предоставляет два HTTP ресурса.
+### Запуск проекта
 
 - Собрать образ 
 ```
@@ -44,13 +44,13 @@ docker-compose up
 ```
 - Образ redis работает на порту 6379
 - Сервис доступен по адресу http://127.0.0.1:8000/
-Запуск веб сервера
-```
-docker run --rm -d -p 8000:8000 parser
-```
-Запуск CLI
-```
-docker run --rm parser python -m parser google.com
-```
-  
+- POST запрос
+  ```
+  curl --location --request POST 'http://127.0.0.1:8000/visited_links/' --header 'Content-Type: application/json' --data-raw '{"links": ["https://ya.ru", "https://ya.ru?q=123", "funbox.ru", "https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor"]}'
+  ```
+- GET запрос
+  ```
+  curl --location --request GET '/visited_domains?start=13&end=9999999999999'
+  ```
+ 
 
