@@ -4,20 +4,20 @@
 ### Приложение предоставляет два HTTP ресурса.
 - Ресурс загрузки посещений:
   - #### Запрос
-```
-POST /visited_links
-{
-"links": [
-"https://ya.ru", "https://ya.ru?q=123", "funbox.ru",
-"https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor"
-]
-}
-```
+  ```
+  POST /visited_links
+  {
+  "links": [
+  "https://ya.ru", "https://ya.ru?q=123", "funbox.ru",
+  "https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor"
+  ]
+  }
+  ```
   - #### Ответ
-```
-{
-"status": "ok"
-}
+  ```
+  {
+  "status": "ok"
+  }
 ```
 
 - Ресурс получения статистики:
