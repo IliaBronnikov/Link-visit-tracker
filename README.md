@@ -22,17 +22,35 @@
 
 - Ресурс получения статистики:
     - #### Запрос
-```
-GET /visited_domains?start=1545221231&end=1545217638
-```
+  ```
+  GET /visited_domains?start=1545221231&end=1545217638
+  ```
   - #### Ответ
+  ```
+  {
+  "domains": [
+  "ya.ru",
+  "funbox.ru", "stackoverflow.com"
+  ],
+  "status": "ok"
+  }
+  ```
+  
+### Приложение предоставляет два HTTP ресурса.
+
+- Собрать образ 
 ```
-{
-"domains": [
-"ya.ru",
-"funbox.ru", "stackoverflow.com"
-],
-"status": "ok"
-}
+docker-compose up
 ```
+- Образ redis работает на порту 6379
+- Сервис доступен по адресу http://127.0.0.1:8000/
+Запуск веб сервера
+```
+docker run --rm -d -p 8000:8000 parser
+```
+Запуск CLI
+```
+docker run --rm parser python -m parser google.com
+```
+  
 
