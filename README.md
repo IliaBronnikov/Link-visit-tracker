@@ -50,7 +50,7 @@ docker-compose up
   ```
 - GET запрос
   ```
-  curl --location --request GET '/visited_domains?start=13&end=9999999999999'
+  curl --location --request GET 'http://127.0.0.1:8000/visited_domains?start=13&end=9999999999999'
   ```
  
 
